@@ -1,6 +1,6 @@
 region     = "europe-west1"
-project    = "ldy-lille"
-project_id = "551434178433"
+project    = "lille-zenbox-adeo-2024"
+project_id = "585501833219"
 iam_members = {
   "cf-python-example-sa" = {
     type       = "sa",

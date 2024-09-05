@@ -10,7 +10,7 @@ provider "google-beta" {
 
 terraform {
   backend "gcs" {
-    bucket = "ldy-lille-tfstates"
+    bucket = "lille-zenbox-adeo-2024-tfstates"
   }
 }
 
