@@ -5,9 +5,9 @@ variable "project" {
 
 variable "iam_members" {
   type = map(object({
-    type     = string
-    creation = bool
-  globalrole = optional(list(string))
+    type       = string
+    creation   = bool
+    globalrole = optional(list(string))
   }))
   description = "type : sa for service account or group, creation always false for group, globalrole is role that you wants (ex: roles/storage.admin). Key map in group mail or sa name."
 }

@@ -22,7 +22,7 @@ locals {
 }
 
 resource "google_project_iam_member" "global_role" {
-  for_each = { for l in local.list_globalrole_members : l => l if(local.list_globalrole_members != [] || local.list_globalrole_members != null) }
+  for_each = { for l in local.list_globalrole_members : l => l if(length(local.list_globalrole_members) == 0 || local.list_globalrole_members != null) }
   project  = var.project
   role     = split(",", each.value)[0]
   member   = split(",", each.value)[1]

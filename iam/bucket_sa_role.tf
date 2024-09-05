@@ -10,14 +10,14 @@ locals {
     [for k, v in var.iam_members : v.type == "sa" ?
       "${split(",", l)[0]},${split(",", l)[1]},serviceAccount:${v.creation ?
         var.create_account[split(":", k)[0]].email :
-        var.get_sa[split(":", k)[0]].email}" :
+      var.get_sa[split(":", k)[0]].email}" :
       "${split(",", l)[0]},${split(",", l)[1]},group:${k}" if split(",", l)[2] == k
     ]
   ])
 }
 
 resource "google_storage_bucket_iam_member" "role_bucket" {
-  for_each = { for l in local.list_bucket_role_members : l => l if(local.list_bucket_role_members != [] || local.list_bucket_role_members != null) }
+  for_each = { for l in local.list_bucket_role_members : l => l if(length(local.list_bucket_role_members) == 0 || local.list_bucket_role_members != null) }
   bucket   = split(",", each.value)[0]
   role     = split(",", each.value)[1]
   member   = split(",", each.value)[2]
