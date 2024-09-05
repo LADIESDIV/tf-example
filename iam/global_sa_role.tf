@@ -12,7 +12,7 @@ locals {
     [for k, v in var.iam_members : v.globalrole != null ?
       contains(v.globalrole, l) ?
       v.type == "sa" ?
-      "${l},serviceAccount:${v.creation ? google_service_account.create_account[split(":", k)[0]].email : data.google_service_account.get_sa[split(":", k)[0]].email}" :
+      "${l},serviceAccount:${v.creation ? var.create_account[split(":", k)[0]].email : var.get_sa[split(":", k)[0]].email}" :
       v.type == "saHorsProject" ?
       "${l},serviceAccount:${k}" :
       "${l},group:${k}" :

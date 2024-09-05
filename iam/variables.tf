@@ -22,3 +22,10 @@ variable "list_bucket" {
   }))
   description = "List bucket, write if it's creation or not. In role members map, add specific role to use bucket (ex roles/storage.admin) with list use can have this role (mail for group and sa name for sa)."
 }
+
+variable "get_sa" {
+  type = map(string)
+}
+variable "create_account" {
+  type = map(string)
+}
