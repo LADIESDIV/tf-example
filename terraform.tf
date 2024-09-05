@@ -10,7 +10,7 @@ provider "google-beta" {
 
 terraform {
   backend "gcs" {
-    bucket = "arf-hermes-prd-4f51-tfstates"
+    bucket = "ldy-lille-tfstates"
   }
 }
 
