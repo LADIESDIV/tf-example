@@ -16,6 +16,7 @@ jobs:
         with:
           terraform_wrapper: false
       - run: terraform init
+      - run: terraform apply -target data.google_service_account.get_sa -target google_service_account.create_account -lock=false -auto-approve
       - run: terraform plan -lock=false -out terraform.plan
       # generate plain output
       - run: terraform show -no-color terraform.plan > terraform.text
