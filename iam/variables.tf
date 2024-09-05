@@ -24,8 +24,8 @@ variable "list_bucket" {
 }
 
 variable "get_sa" {
-  type = map(string)
+  type = map(any)
 }
 variable "create_account" {
-  type = map(string)
+  type = map(any)
 }

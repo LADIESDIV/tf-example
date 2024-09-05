@@ -1,0 +1,38 @@
+{
+  "name": "tf-example",
+  "version": "0.0.0",
+  "description": "A set of terraform repo",
+  "directories": {},
+  "scripts": {
+    "release": "lerna exec --concurrency 1 -- semantic-release --tag-format='v\\${version}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ladiesdiv/tf-example.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ladiesdiv/tf-example/issues"
+  },
+  "homepage": "https://github.com/ladiesdiv/tf-example#readme",
+  "private": true,
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.2",
+    "@semantic-release/commit-analyzer": "^12.0.0",
+    "@semantic-release/github": "^24.0.0",
+    "@semantic-release/release-notes-generator": "^14.0.0",
+    "lerna": "^8.1.7",
+    "semantic-release": "^24.0.0",
+    "semantic-release-monorepo": "^8.0.1"
+  },
+  "release": {
+    "tagFormat": "v${version}",
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/github"
+    ],
+    "extends": "semantic-release-monorepo",
+    "branches": "main"
+  }
+}
