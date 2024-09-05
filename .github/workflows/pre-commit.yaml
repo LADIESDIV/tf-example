@@ -42,4 +42,4 @@ jobs:
 
       - name: Execute pre-commit
         run: |
-          pre-commit run -a --color=always --show-diff-on-failure --files ${{ steps.file_changes.outputs.files }}
+          pre-commit run --color=always --show-diff-on-failure --files ${{ steps.file_changes.outputs.files }}

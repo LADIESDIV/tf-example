@@ -1,6 +1,6 @@
 region     = "europe-west1"
-project    = "xx"
-project_id = "xx"
+project    = "ldy-lille"
+project_id = "551434178433"
 iam_members = {
   "cf-python-example-sa" = {
     type       = "sa",
