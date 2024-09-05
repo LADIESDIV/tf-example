@@ -1,0 +1,7 @@
+cred.json
+.terraform
+*/.terraform
+cloud
+testlog/
+.infracost
+.terraform.lock.hcl

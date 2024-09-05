@@ -1,0 +1,38 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+# Pre-requis : Install go (https://go.dev/doc/install), terraform-docs (https://terraform-docs.io/user-guide/installation/), tflint (https://github.com/terraform-linters/tflint), tfsec (https://github.com/aquasecurity/tfsec)
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-added-large-files
+- repo: https://github.com/antonbabenko/pre-commit-terraform
+  rev: v1.94.1
+  hooks:
+    # - id: terraform_providers_lock
+    # - id: terraform_fmt
+    # - id: terraform_tflint
+    # - id: terraform_trivy
+    #   args:
+    #   - --hook-config=--parallelism-limit=1
+    #   - --hook-config=--parallelism-ci-cpu-cores=1
+    # - id: terraform_validate
+    #   args:
+    #   - --hook-config=--parallelism-ci-cpu-cores=1
+    # - id: infracost_breakdown
+    #   args:
+    #   - --args=--path=. --terraform-var-file terraform.tfvars
+    #   verbose: true
+    - id: terraform_docs
+      args:
+        - --hook-config=--path-to-file=README.md        # Valid UNIX path. I.e. ../TFDOC.md or docs/README.md etc.
+        - --hook-config=--add-to-existing-file=true     # Boolean. true or false
+        - --hook-config=--create-file-if-not-exist=true # Boolean. true or false
+- repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
+  rev: v9.17.0
+  hooks:
+    - id: commitlint
+      stages: [commit-msg]
+      additional_dependencies: ['@commitlint/config-conventional']

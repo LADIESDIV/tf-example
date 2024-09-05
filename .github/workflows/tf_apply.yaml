@@ -1,0 +1,23 @@
+name: terraform-plan
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  terraform-apply:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v3
+      - uses: pre-commit/action@v3.0.1
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_wrapper: false
+      - run: terraform init
+      - run: terraform plan -lock=false
+      - run: terraform apply -lock=false -auto-approve

@@ -1,0 +1,51 @@
+---
+formatter: "markdown"
+
+header-from: iam.tf
+footer-from: ""
+
+sections:
+  hide: []
+  show: []
+
+content: |-
+    {{ .Footer }}
+    {{ .Inputs }}
+    {{ .Modules }}
+    {{ .Outputs }}
+    {{ .Providers }}
+    {{ .Requirements }}
+    {{ .Resources }}
+
+recursive:
+  enabled: false
+  path: modules
+
+output:
+  file: "../README.md"
+  mode: inject
+  template: |-
+    <!--- BEGIN_TF_DOCS --->
+    {{ .Content }}
+    <!--- END_TF_DOCS --->
+output-values:
+  enabled: false
+  from: ""
+
+sort:
+  enabled: true
+  by: name
+
+settings:
+  anchor: true
+  color: true
+  default: true
+  description: true
+  escape: true
+  hide-empty: true
+  html: true
+  indent: 2
+  lockfile: true
+  required: true
+  sensitive: true
+  type: true
