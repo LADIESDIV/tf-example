@@ -1,6 +1,6 @@
 region     = "europe-west1"
-project    = "xx"
-project_id = "xx"
+project    = "lille-zenbox-adeo-2024"
+project_id = "585501833219"
 iam_members = {
   "cf-python-example-sa" = {
     type       = "sa",
@@ -12,7 +12,7 @@ iam_members = {
 list_repository = ["cf-python-example"]
 
 list_bucket = [{
-  "name"                     = "xx-cf-python-example",
+  "name"                     = "lille-zenbox-adeo-2024-cf-python-example",
   "bucket_region"            = "europe-west1",
   "creation"                 = true,
   "role_members"             = { "roles/storage.objectAdmin" : ["cf-python-example-sa"] }
