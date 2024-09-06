@@ -12,7 +12,7 @@ locals {
     [for k, v in var.iam_members : v.globalrole != null ?
       contains(v.globalrole, l) ?
       v.type == "sa" ?
-      "${l},serviceAccount:${v.creation ? google_service_account.create_account[split(":", k)[0]].email : data.google_service_account.get_sa[split(":", k)[0]].email}" :
+      "${l},serviceAccount:${v.creation ? var.create_account[split(":", k)[0]].email : var.get_sa[split(":", k)[0]].email}" :
       v.type == "saHorsProject" ?
       "${l},serviceAccount:${k}" :
       "${l},group:${k}" :
@@ -22,7 +22,7 @@ locals {
 }
 
 resource "google_project_iam_member" "global_role" {
-  for_each = { for l in local.list_globalrole_members : l => l if(local.list_globalrole_members != [] || local.list_globalrole_members != null) }
+  for_each = { for l in local.list_globalrole_members : l => l if(length(local.list_globalrole_members) == 0 || local.list_globalrole_members != null) }
   project  = var.project
   role     = split(",", each.value)[0]
   member   = split(",", each.value)[1]
