@@ -6,7 +6,12 @@ iam_members = {
     type       = "sa",
     creation   = true,
     globalrole = ["roles/cloudfunctions.admin"]
-  }
+  },
+  # "tf-sa-635@lille-zenbox-adeo-2024.iam.gserviceaccount.com" = {
+  #   type       = "sa",
+  #   creation   = false,
+  #   globalrole = ["roles/cloudfunctions.admin"]
+  # }
 }
 
 list_repository = ["cf-python-example"]

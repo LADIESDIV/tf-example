@@ -1,4 +1,5 @@
 module "bucket_sa_role" {
+  count = var.iam_members != {} ? 0 : 1
   source         = "./iam"
   iam_members    = var.iam_members
   project        = var.project

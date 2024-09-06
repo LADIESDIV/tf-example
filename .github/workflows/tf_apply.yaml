@@ -18,5 +18,6 @@ jobs:
         with:
           terraform_wrapper: false
       - run: terraform init
+      - run: terraform test
       - run: terraform plan -lock=false
       - run: terraform apply -lock=false -auto-approve
