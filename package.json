@@ -27,7 +27,6 @@
       "@semantic-release/changelog",
       "@semantic-release/github"
     ],
-    "extends": "semantic-release-monorepo",
     "branches": "main"
   }
 }
