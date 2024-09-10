@@ -1,5 +1,5 @@
 module "github_oidc" {
-  count = var.list_oidc_repo != {} ? 0 : 1
+  count   = var.list_oidc_repo != {} ? 1 : 0
   source  = "saidsef/github-oidc/gcp"
   version = ">= 1"
 

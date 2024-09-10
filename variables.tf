@@ -7,7 +7,7 @@ variable "region" {
 variable "project" {
   type        = string
   description = "Project id"
-  default = "test"
+  default     = "test"
 }
 
 variable "iam_members" {
@@ -17,7 +17,7 @@ variable "iam_members" {
     globalrole = optional(list(string))
   }))
   description = "type : sa for service account or group, creation always false for group, globalrole is role that you wants (ex: roles/storage.admin). Key map in group mail or sa name."
-default = {}
+  default     = {}
 }
 
 variable "list_bucket" {
@@ -31,8 +31,8 @@ variable "list_bucket" {
   description = "List bucket, write if it's creation or not. In role members map, add specific role to use bucket (ex roles/storage.admin) with list use can have this role (mail for group and sa name for sa)."
   validation {
     condition = alltrue([
-  for value in var.list_bucket : can(regex("^lille-zenbox-adeo-2024-.*$", value.name))
-])
+      for value in var.list_bucket : can(regex("^lille-zenbox-adeo-2024-.*$", value.name))
+    ])
     error_message = "Name bucket start by project name."
   }
   default = []
@@ -41,7 +41,7 @@ variable "list_bucket" {
 variable "list_repository" {
   type        = list(string)
   description = "List docker repo."
-  default = []
+  default     = []
 }
 
 variable "list_oidc_repo" {
@@ -50,11 +50,11 @@ variable "list_oidc_repo" {
     repository = string
   }))
   description = "List repo with oidc for gcp."
-  default = []
+  default     = []
 }
 
 variable "project_id" {
-  type = string
+  type        = string
   description = "ID project"
-  default = ""
+  default     = ""
 }
