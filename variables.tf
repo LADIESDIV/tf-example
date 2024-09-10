@@ -51,9 +51,3 @@ variable "oidc" {
   description = "List repo with oidc for gcp."
   default     = {}
 }
-
-variable "project_id" {
-  type        = string
-  description = "ID project"
-  default     = ""
-}

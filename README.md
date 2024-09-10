@@ -23,14 +23,12 @@ Pour utiliser une de ses implémentations, allez dans terraform.tfvars et ajoute
 | <a name="input_list_repository"></a> [list\_repository](#input\_list\_repository) | List docker repo. | `list(string)` | `[]` | no |
 | <a name="input_oidc"></a> [oidc](#input\_oidc) | List repo with oidc for gcp. | <pre>map(object({<br>    list_oidc_repo = list(map(string))<br>  }))</pre> | `{}` | no |
 | <a name="input_project"></a> [project](#input\_project) | Project id | `string` | `"test"` | no |
-| <a name="input_project_id"></a> [project\_id](#input\_project\_id) | ID project | `string` | `""` | no |
 | <a name="input_region"></a> [region](#input\_region) | Region name | `string` | `"europe-west1"` | no |
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_bucket_sa_role"></a> [bucket\_sa\_role](#module\_bucket\_sa\_role) | ./iam | n/a |
-| <a name="module_github_oidc"></a> [github\_oidc](#module\_github\_oidc) | saidsef/github-oidc/gcp | >= 1 |
 
 ## Providers
 
@@ -50,6 +48,9 @@ Pour utiliser une de ses implémentations, allez dans terraform.tfvars et ajoute
 | Name | Type |
 |------|------|
 | [google-beta_google_artifact_registry_repository.repository](https://registry.terraform.io/providers/hashicorp/google-beta/5.43.1/docs/resources/google_artifact_registry_repository) | resource |
+| [google-beta_google_iam_workload_identity_pool.github_pool](https://registry.terraform.io/providers/hashicorp/google-beta/5.43.1/docs/resources/google_iam_workload_identity_pool) | resource |
+| [google-beta_google_iam_workload_identity_pool_provider.github_provider](https://registry.terraform.io/providers/hashicorp/google-beta/5.43.1/docs/resources/google_iam_workload_identity_pool_provider) | resource |
+| [google-beta_google_service_account_iam_member.pool_impersonation](https://registry.terraform.io/providers/hashicorp/google-beta/5.43.1/docs/resources/google_service_account_iam_member) | resource |
 | [google_service_account.create_account](https://registry.terraform.io/providers/hashicorp/google/5.43.1/docs/resources/service_account) | resource |
 | [google_storage_bucket.bucket](https://registry.terraform.io/providers/hashicorp/google/5.43.1/docs/resources/storage_bucket) | resource |
 | [google_service_account.get_sa](https://registry.terraform.io/providers/hashicorp/google/5.43.1/docs/data-sources/service_account) | data source |

@@ -1,11 +1,11 @@
-region     = "europe-west1"
-project    = "lille-zenbox-adeo-2024"
-project_id = "585501833219"
+region  = "europe-west1"
+project = "lille-zenbox-adeo-2024"
+#project_id = "585501833219"
 iam_members = {
   "cf-python-example-sa" = {
     type       = "sa",
     creation   = true,
-    globalrole = ["roles/cloudfunctions.admin"]
+    globalrole = ["roles/cloudfunctions.admin", "roles/artifactregistry.writer"]
   },
   # "tf-sa-635@lille-zenbox-adeo-2024.iam.gserviceaccount.com" = {
   #   type       = "sa",
@@ -24,7 +24,9 @@ list_bucket = [{
   "path_delete_after_30_day" = ["test"]
 }]
 
-oidc = { "github-action-ldy" : { "list_oidc_repo" : [{
-  org_name   = "ladiesdiv"
-  repository = "python-example"
+oidc = { "github-action-sandbox-ldy" : { "list_oidc_repo" : [{
+  org_name    = "ladiesdiv"
+  repository  = "python-example"
+  provider_id = "github-provider"
+  sa          = "cf-python-example-sa"
 }] } }
