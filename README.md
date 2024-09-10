@@ -20,8 +20,8 @@ Pour utiliser une de ses implémentations, allez dans terraform.tfvars et ajoute
 |------|-------------|------|---------|:--------:|
 | <a name="input_iam_members"></a> [iam\_members](#input\_iam\_members) | type : sa for service account or group, creation always false for group, globalrole is role that you wants (ex: roles/storage.admin). Key map in group mail or sa name. | <pre>map(object({<br>    type       = string<br>    creation   = bool<br>    globalrole = optional(list(string))<br>  }))</pre> | `{}` | no |
 | <a name="input_list_bucket"></a> [list\_bucket](#input\_list\_bucket) | List bucket, write if it's creation or not. In role members map, add specific role to use bucket (ex roles/storage.admin) with list use can have this role (mail for group and sa name for sa). | <pre>list(object({<br>    name                     = string<br>    creation                 = bool<br>    bucket_region            = string<br>    role_members             = optional(map(list(string)))<br>    path_delete_after_30_day = list(string)<br>  }))</pre> | `[]` | no |
-| <a name="input_list_oidc_repo"></a> [list\_oidc\_repo](#input\_list\_oidc\_repo) | List repo with oidc for gcp. | <pre>list(object({<br>    org_name   = string<br>    repository = string<br>  }))</pre> | `[]` | no |
 | <a name="input_list_repository"></a> [list\_repository](#input\_list\_repository) | List docker repo. | `list(string)` | `[]` | no |
+| <a name="input_oidc"></a> [oidc](#input\_oidc) | List repo with oidc for gcp. | <pre>map(object({<br>    list_oidc_repo = list(map(string))<br>  }))</pre> | `{}` | no |
 | <a name="input_project"></a> [project](#input\_project) | Project id | `string` | `"test"` | no |
 | <a name="input_project_id"></a> [project\_id](#input\_project\_id) | ID project | `string` | `""` | no |
 | <a name="input_region"></a> [region](#input\_region) | Region name | `string` | `"europe-west1"` | no |

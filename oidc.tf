@@ -1,10 +1,10 @@
 module "github_oidc" {
-  count   = var.list_oidc_repo != {} ? 1 : 0
-  source  = "saidsef/github-oidc/gcp"
-  version = ">= 1"
+  for_each = var.oidc
+  source   = "saidsef/github-oidc/gcp"
+  version  = ">= 1"
 
   project_id = var.project_id
-  pool_id    = "github-action"
+  pool_id    = each.key
 
-  repositories = var.list_oidc_repo
+  repositories = each.value.list_oidc_repo
 }

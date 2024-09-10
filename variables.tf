@@ -44,13 +44,12 @@ variable "list_repository" {
   default     = []
 }
 
-variable "list_oidc_repo" {
-  type = list(object({
-    org_name   = string
-    repository = string
+variable "oidc" {
+  type = map(object({
+    list_oidc_repo = list(map(string))
   }))
   description = "List repo with oidc for gcp."
-  default     = []
+  default     = {}
 }
 
 variable "project_id" {

@@ -24,7 +24,7 @@ list_bucket = [{
   "path_delete_after_30_day" = ["test"]
 }]
 
-list_oidc_repo = [{
+oidc = { "github-action" : { "list_oidc_repo" : [{
   org_name   = "ladiesdiv"
   repository = "python-example"
-}]
+}] } }

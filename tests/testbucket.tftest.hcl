@@ -7,12 +7,13 @@ run "create_bucket" {
         "path_delete_after_30_day" = ["test"]
         }]
     list_repository = ["test"]
+    oidc = {}
     iam_members = {
-  "test-sa" = {
-    type       = "sa",
-    creation   = true,
-    globalrole = ["roles/cloudfunctions.admin"]
-  }
+        "test-sa" = {
+          type       = "sa",
+          creation   = true,
+          globalrole = ["roles/cloudfunctions.admin"]
+        }
 }
   }
 
