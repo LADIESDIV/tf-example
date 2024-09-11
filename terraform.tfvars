@@ -25,7 +25,7 @@ list_bucket = [{
 }]
 
 oidc = { "github-action-sandbox-ldy" : { "list_oidc_repo" : [{
-  org_name    = "ladiesdiv"
+  org_name    = "LADIESDIV"
   repository  = "python-example"
   provider_id = "github-provider"
   sa          = "cf-python-example-sa"
