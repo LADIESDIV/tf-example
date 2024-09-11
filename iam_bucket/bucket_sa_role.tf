@@ -1,12 +1,11 @@
 locals {
-  list_bucketrolename = distinct(flatten(
-    [for l in var.list_bucket :
-      [for k, v in l.role_members :
-        [for m in v :
-    "${l.name},${k},${m}"] if(l.role_members != {} || l.role_members != null)]]
+  bucketrolename = distinct(flatten(
+    [for k, v in var.bucket.role_members :
+      [for m in v :
+    "${var.bucket.name},${k},${m}"] if(var.bucket.role_members != {} || var.bucket.role_members != null)]
   ))
   list_bucket_role_members = flatten([
-    for l in local.list_bucketrolename :
+    for l in local.bucketrolename :
     [for k, v in var.iam_members : v.type == "sa" ?
       "${split(",", l)[0]},${split(",", l)[1]},serviceAccount:${v.creation ?
         var.create_account[split(":", k)[0]].email :

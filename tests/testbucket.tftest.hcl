@@ -4,17 +4,12 @@ run "create_bucket" {
         "name"                     = "lille-zenbox-adeo-2024-test",
         "bucket_region"            = "europe-west1",
         "creation"                 = true,
+        "role_members" = {}
         "path_delete_after_30_day" = ["test"]
         }]
     list_repository = ["test"]
     oidc = {}
-    iam_members = {
-        "test-sa" = {
-          type       = "sa",
-          creation   = true,
-          globalrole = ["roles/cloudfunctions.admin"]
-        }
-}
+    iam_members = {}
   }
 
   # Check that the bucket name is correct
