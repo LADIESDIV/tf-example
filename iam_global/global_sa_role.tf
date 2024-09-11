@@ -3,22 +3,14 @@
 # ----------------------------------------------------------------------------------------------------------------------
 
 locals {
-  list_globalrole = distinct(flatten(
-    [for k, v in var.iam_members :
-    v.globalrole == null ? [] : v.globalrole]
-  ))
   list_globalrole_members = compact(flatten([
-    for l in local.list_globalrole :
-    [for k, v in var.iam_members : v.globalrole != null ?
-      contains(v.globalrole, l) ?
-      v.type == "sa" ?
-      "${l},serviceAccount:${v.creation ? var.create_account[split(":", k)[0]].email : var.get_sa[split(":", k)[0]].email}" :
-      v.type == "saHorsProject" ?
-      "${l},serviceAccount:${k}" :
-      "${l},group:${k}" :
-      "" :
-    ""]
-  ]))
+    for l in var.globalrole :
+    var.type == "sa" ?
+    "${l},serviceAccount:${var.create_account != null ? var.create_account[var.sa].email : var.get_sa[var.sa].email}" :
+    var.type == "saHorsProject" ?
+    "${l},serviceAccount:${var.sa}" :
+    "${l},group:${var.sa}"]
+  ))
 }
 
 resource "google_project_iam_member" "global_role" {

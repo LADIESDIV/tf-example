@@ -28,7 +28,8 @@ Pour utiliser une de ses implémentations, allez dans terraform.tfvars et ajoute
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_bucket_sa_role"></a> [bucket\_sa\_role](#module\_bucket\_sa\_role) | ./iam | n/a |
+| <a name="module_bucket_role"></a> [bucket\_role](#module\_bucket\_role) | ./iam_bucket | n/a |
+| <a name="module_sa_role"></a> [sa\_role](#module\_sa\_role) | ./iam_global | n/a |
 
 ## Providers
 
