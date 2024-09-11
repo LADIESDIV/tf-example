@@ -30,4 +30,4 @@ resource "google_service_account_iam_member" "pool_impersonation" {
   service_account_id = can(google_service_account.create_account[each.value.list_oidc_repo[0].sa]) ? google_service_account.create_account[each.value.list_oidc_repo[0].sa].id : data.google_service_account.get_sa[each.value.list_oidc_repo[0].sa].id
   role               = "roles/iam.workloadIdentityUser"
   member             = "principalSet://iam.googleapis.com/${google_iam_workload_identity_pool.github_pool[each.key].name}/attribute.repository/${each.value.list_oidc_repo[0].org_name}/${each.value.list_oidc_repo[0].repository}"
-
+}
