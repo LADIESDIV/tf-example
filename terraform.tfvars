@@ -5,7 +5,7 @@ iam_members = {
   "cf-python-example-sa" = {
     type       = "sa",
     creation   = true,
-    globalrole = ["roles/cloudfunctions.admin", "roles/artifactregistry.writer"]
+    globalrole = ["roles/run.admin", "roles/artifactregistry.writer", "roles/iam.serviceAccountUser"]
   },
   # "tf-sa-635@lille-zenbox-adeo-2024.iam.gserviceaccount.com" = {
   #   type       = "sa",
