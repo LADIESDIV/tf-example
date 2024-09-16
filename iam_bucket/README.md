@@ -6,8 +6,8 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
-| <a name="requirement_google"></a> [google](#requirement\_google) | 5.43.1 |
-| <a name="requirement_google-beta"></a> [google-beta](#requirement\_google-beta) | 5.43.1 |
+| <a name="requirement_google"></a> [google](#requirement\_google) | 6.2.0 |
+| <a name="requirement_google-beta"></a> [google-beta](#requirement\_google-beta) | 6.2.0 |
 
 ## Providers
 
@@ -23,7 +23,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [google_storage_bucket_iam_member.role_bucket](https://registry.terraform.io/providers/hashicorp/google/5.43.1/docs/resources/storage_bucket_iam_member) | resource |
+| [google_storage_bucket_iam_member.role_bucket](https://registry.terraform.io/providers/hashicorp/google/6.2.0/docs/resources/storage_bucket_iam_member) | resource |
 
 ## Inputs
 
