@@ -30,3 +30,9 @@ oidc = { "github-action-sandbox-ldy" : { "list_oidc_repo" : [{
   provider_id = "github-provider"
   sa          = "cf-python-example-sa"
 }] } }
+
+bdd = {
+  bdd-example = {
+    version = "POSTGRES_15"
+  }
+}

@@ -18,6 +18,7 @@ Pour utiliser une de ses implémentations, allez dans terraform.tfvars et ajoute
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_bdd"></a> [bdd](#input\_bdd) | bdd creation. | <pre>map(object({<br>    version = string<br>  }))</pre> | `{}` | no |
 | <a name="input_iam_members"></a> [iam\_members](#input\_iam\_members) | type : sa for service account or group, creation always false for group, globalrole is role that you wants (ex: roles/storage.admin). Key map in group mail or sa name. | <pre>map(object({<br>    type       = string<br>    creation   = bool<br>    globalrole = optional(list(string))<br>  }))</pre> | `{}` | no |
 | <a name="input_list_bucket"></a> [list\_bucket](#input\_list\_bucket) | List bucket, write if it's creation or not. In role members map, add specific role to use bucket (ex roles/storage.admin) with list use can have this role (mail for group and sa name for sa). | <pre>list(object({<br>    name                     = string<br>    creation                 = bool<br>    bucket_region            = string<br>    role_members             = optional(map(list(string)))<br>    path_delete_after_30_day = list(string)<br>  }))</pre> | `[]` | no |
 | <a name="input_list_repository"></a> [list\_repository](#input\_list\_repository) | List docker repo. | `list(string)` | `[]` | no |
@@ -35,8 +36,8 @@ Pour utiliser une de ses implémentations, allez dans terraform.tfvars et ajoute
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | 5.43.1 |
-| <a name="provider_google-beta"></a> [google-beta](#provider\_google-beta) | 5.43.1 |
+| <a name="provider_google"></a> [google](#provider\_google) | 6.2.0 |
+| <a name="provider_google-beta"></a> [google-beta](#provider\_google-beta) | 6.2.0 |
 ## Requirements
 
 | Name | Version |
@@ -53,6 +54,7 @@ Pour utiliser une de ses implémentations, allez dans terraform.tfvars et ajoute
 | [google-beta_google_iam_workload_identity_pool_provider.github_provider](https://registry.terraform.io/providers/hashicorp/google-beta/6.2.0/docs/resources/google_iam_workload_identity_pool_provider) | resource |
 | [google-beta_google_service_account_iam_member.pool_impersonation](https://registry.terraform.io/providers/hashicorp/google-beta/6.2.0/docs/resources/google_service_account_iam_member) | resource |
 | [google_service_account.create_account](https://registry.terraform.io/providers/hashicorp/google/6.2.0/docs/resources/service_account) | resource |
+| [google_sql_database_instance.main](https://registry.terraform.io/providers/hashicorp/google/6.2.0/docs/resources/sql_database_instance) | resource |
 | [google_storage_bucket.bucket](https://registry.terraform.io/providers/hashicorp/google/6.2.0/docs/resources/storage_bucket) | resource |
 | [google_service_account.get_sa](https://registry.terraform.io/providers/hashicorp/google/6.2.0/docs/data-sources/service_account) | data source |
 <!--- END_TF_DOCS --->
