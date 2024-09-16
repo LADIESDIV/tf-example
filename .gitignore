@@ -6,3 +6,5 @@ testlog/
 .infracost
 .env
 .terraform.lock.hcl
+
+package-lock.json
