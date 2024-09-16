@@ -42,19 +42,19 @@ Pour utiliser une de ses implémentations, allez dans terraform.tfvars et ajoute
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
-| <a name="requirement_google"></a> [google](#requirement\_google) | 5.43.1 |
-| <a name="requirement_google-beta"></a> [google-beta](#requirement\_google-beta) | 5.43.1 |
+| <a name="requirement_google"></a> [google](#requirement\_google) | 6.2.0 |
+| <a name="requirement_google-beta"></a> [google-beta](#requirement\_google-beta) | 6.2.0 |
 ## Resources
 
 | Name | Type |
 |------|------|
-| [google-beta_google_artifact_registry_repository.repository](https://registry.terraform.io/providers/hashicorp/google-beta/5.43.1/docs/resources/google_artifact_registry_repository) | resource |
-| [google-beta_google_iam_workload_identity_pool.github_pool](https://registry.terraform.io/providers/hashicorp/google-beta/5.43.1/docs/resources/google_iam_workload_identity_pool) | resource |
-| [google-beta_google_iam_workload_identity_pool_provider.github_provider](https://registry.terraform.io/providers/hashicorp/google-beta/5.43.1/docs/resources/google_iam_workload_identity_pool_provider) | resource |
-| [google-beta_google_service_account_iam_member.pool_impersonation](https://registry.terraform.io/providers/hashicorp/google-beta/5.43.1/docs/resources/google_service_account_iam_member) | resource |
-| [google_service_account.create_account](https://registry.terraform.io/providers/hashicorp/google/5.43.1/docs/resources/service_account) | resource |
-| [google_storage_bucket.bucket](https://registry.terraform.io/providers/hashicorp/google/5.43.1/docs/resources/storage_bucket) | resource |
-| [google_service_account.get_sa](https://registry.terraform.io/providers/hashicorp/google/5.43.1/docs/data-sources/service_account) | data source |
+| [google-beta_google_artifact_registry_repository.repository](https://registry.terraform.io/providers/hashicorp/google-beta/6.2.0/docs/resources/google_artifact_registry_repository) | resource |
+| [google-beta_google_iam_workload_identity_pool.github_pool](https://registry.terraform.io/providers/hashicorp/google-beta/6.2.0/docs/resources/google_iam_workload_identity_pool) | resource |
+| [google-beta_google_iam_workload_identity_pool_provider.github_provider](https://registry.terraform.io/providers/hashicorp/google-beta/6.2.0/docs/resources/google_iam_workload_identity_pool_provider) | resource |
+| [google-beta_google_service_account_iam_member.pool_impersonation](https://registry.terraform.io/providers/hashicorp/google-beta/6.2.0/docs/resources/google_service_account_iam_member) | resource |
+| [google_service_account.create_account](https://registry.terraform.io/providers/hashicorp/google/6.2.0/docs/resources/service_account) | resource |
+| [google_storage_bucket.bucket](https://registry.terraform.io/providers/hashicorp/google/6.2.0/docs/resources/storage_bucket) | resource |
+| [google_service_account.get_sa](https://registry.terraform.io/providers/hashicorp/google/6.2.0/docs/data-sources/service_account) | data source |
 <!--- END_TF_DOCS --->
 <!-- BEGIN_TF_DOCS -->
 <!-- END_TF_DOCS -->
