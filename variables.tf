@@ -51,3 +51,11 @@ variable "oidc" {
   description = "List repo with oidc for gcp."
   default     = {}
 }
+
+variable "bdd" {
+  type = map(object({
+    version = string
+  }))
+  description = "bdd creation."
+  default     = {}
+}

@@ -10,6 +10,7 @@ run "create_bucket" {
     list_repository = ["test"]
     oidc = {}
     iam_members = {}
+    bdd = {}
   }
 
   # Check that the bucket name is correct
