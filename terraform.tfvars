@@ -1,13 +1,13 @@
 region  = "europe-west1"
-project = "lille-zenbox-adeo-2024"
-#project_id = "585501833219"
+project = "xx"
+#project_id = "xx"
 iam_members = {
   "cf-python-example-sa" = {
     type       = "sa",
     creation   = true,
     globalrole = ["roles/run.admin", "roles/artifactregistry.writer", "roles/iam.serviceAccountUser"]
   },
-  # "tf-sa-635@lille-zenbox-adeo-2024.iam.gserviceaccount.com" = {
+  # "sa@xx.iam.gserviceaccount.com" = {
   #   type       = "sa",
   #   creation   = false,
   #   globalrole = ["roles/cloudfunctions.admin"]
@@ -17,7 +17,7 @@ iam_members = {
 list_repository = ["cf-python-example"]
 
 list_bucket = [{
-  "name"                     = "lille-zenbox-adeo-2024-cf-python-example",
+  "name"                     = "xx-cf-python-example",
   "bucket_region"            = "europe-west1",
   "creation"                 = true,
   "role_members"             = { "roles/storage.objectAdmin" : ["cf-python-example-sa"] }
